@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Onshape Auto-Login",
+  "version": "1.0",
+  "description": "Automatically signs back in to Onshape after the inactivity timeout.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://cad.onshape.com/signin*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
